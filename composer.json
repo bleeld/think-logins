@@ -1,0 +1,36 @@
+{
+    "name": "bleeld/think-logins",
+    "description": "ThinkPHP三方登录插件，支持QQ、微信、微博、飞书、钉钉等平台",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bleeld",
+            "email": "bleeld@example.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.0",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-openssl": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "bleeld\\logins\\": "src/"
+        }
+    },
+    "extra": {
+        "think": {
+            "services": [
+                "bleeld\\logins\\Service"
+            ]
+        }
+    },
+    "scripts": {
+        "post-package-uninstall": [
+            "bleeld\\logins\\Installer::uninstall"
+        ]
+    },
+    "minimum-stability": "stable"
+}
